@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Nombre e icono en pestaña del buscador -->
+    <title>Oxynus</title>
+    <link rel="shortcut icon" href="../assets/iconos/logo Oxynus.svg">
+
+    <!-- Diseño y estilo en CSS -->
+    <link rel="stylesheet" href="../css/clean_style/normalize.css"> 
+    <link rel="stylesheet" href="../css/clean_style/reset.css">
+    <link rel="stylesheet" href="../css/clean_style/typography.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+
+<body>
+    <!-- Imagenes background -->
+    <section class="backImg">
+        <div class="backImg__botGray"></div>
+        <div class="backImg__topGray"></div>
+    </section>
+
+
+    <!-- Menu superior -->
+    <header class="header">
+        <!-- Nombre de la compañia -->
+        <a href="../index.html">
+            <h1 class="header__compName logoFont">OXYNUS</h1>
+        </a>
+
+        <!-- Menu de navegacion -->
+        <nav>
+            <input type="checkbox" id="menu">
+            <ul class="header__menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="./nosotros.html">Nosotros</a></li>
+                <li><a href="./proyectos.html">Proyectos</a></li>
+                <li><a href="./productos.html">Productos</a></li>
+                <li><a href="./contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <!-- Menu desplegable -->
+        <div class="menuBurger">
+            <!-- <input type="checkbox" id="menu"> -->
+            <label for="menu" class="menuCheck">
+                <img src="../assets/iconos/icono menu naranja.png" alt="menu">
+            </label>
+        </div>
+    </header>
+
+    <!--Productos disponibles-->
+    <section class="prod-galery">
+        
+        <div class="product">
+            <div class="product__img">
+                <img src="../assets/productos/nudemcu-esp8266.jfif" alt="nudemcu">
+            </div>
+            <div class="product__text">
+                <h4>Nudemcu Wifi ESP8266</h4>
+                <p>Placa de desarrollo basada en el popular chip ESP8266. Con este sencillo modulo se puede realizar el prototipo de cualquier sistema para el loT. 10 GPIO, cada GPIO puede ser PWM, I2C, 1-Wire.</p>
+            </div>
+        </div>
+        
+        <div class="product">
+            <div class="product__img">
+                <img src="../assets/productos/arduino-uno.jfif" alt="arduino uno">
+            </div>
+            <div class="product__text">
+                <h4>Arduino Uno Ch340</h4>
+                <p>Placa de desarrollo basada en el microcontrolador Atmega328 + Ch340g. Digital I/O Pins 14. Analog Input Pins 6</p>
+            </div>
+
+        </div>
+        
+        <div class="product">
+            <div class="product__img">
+                <img src="../assets/productos/raspberrypi-4.jfif" alt="raspberry pi 4">
+            </div>
+            <div class="product__text">
+                <h4>Raspberry Pi4 Model B 4gb</h4>
+                <p>Procesador 64-bit quad-core Cortex-A72. 4GB LPDDR4 RAM.2 puertos HDMI. 2 puertos USB 3.0</p>
+            </div>
+        </div>
+        
+        <div class="product">
+            <div class="product__img">
+                <img src="../assets/productos/raspberry-display7.jfif" alt="display 7 raspberry">
+            </div>
+            <div class="product__text">
+                <h4>Dispaly 7" tactil Raspberry</h4>
+                <p>Pantalla 7 pulgadas touchscreen original raspberry Element14. Unico con interfaz DSI.</p>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="product__img">
+                <img src="../assets/productos/modulo-relex2.jfif" alt="modulo rele x2">
+            </div>
+            <div class="product__text">
+                <h4>Modulo Relay de 2 canales</h4>
+                <p>Módulo de reles para conmutación de cargas de potencia. Los contactos de los relevadores están diseñados para conmutar cargas de hasta 10 A y 250VAC</p>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="product__img">
+                <img src="../assets/productos/sensor-nivel_ultrasonico.jfif" alt="sensor de nivel ultrasonico">
+            </div>
+            <div class="product__text">
+                <h4>Sensor ultrasonico para nivel</h4>
+                <p>Sensor ultrasonico para medir nivel de liquidos. 4-20mA</p>
+            </div>
+        </div>
+
+        <!-- agregar todos los demás productos cuando este armado CSS, por si es necesario agregar Ids y Class -->
+    </section>
+
+
+    <!-- Pie de pagina -->
+    <footer class="footer">
+        <!-- Logo y nombre de compañia -->
+        <div class="footer__info">
+            <div class="footerInfo__logo">
+                <a href="../index.html">
+                    <img src="../assets/iconos/logo Oxynus gris.svg" alt="Logo de la compañia">
+                </a>
+            </div>
+            <div class="footerInfo__name">
+                <h2 class="logoFont">OXYNUS</h2>
+                <h3>eslogan de la compañia</h3>
+            </div>
+        </div>
+
+        <!-- Redes Sociales -->
+        <div class="footer__social">
+            <a href="https://www.instagram.com/" target="_blank">
+                <img src="../assets/iconos/icono instagram alterado.png" alt="icono instagram">
+            </a>
+            <a href="https://www.facebook.com/" target="_blank">
+                <img src="../assets/iconos/icono facebook alterado.png" alt="icono instagram">
+            </a>
+        </div>
+    </footer>
+</body>
+
+</html>
