@@ -11,9 +11,10 @@
     <link rel="shortcut icon" href="../assets/iconos/logo Oxynus.svg">
 
     <!-- Limpiar estilos CSS -->
-    <link rel="stylesheet" href="../css/clean_style/normalize.css"> 
-    <link rel="stylesheet" href="../css/clean_style/reset.css">
-    <link rel="stylesheet" href="../css/clean_style/typography.css">
+    <!-- si lo hacemos se desconfigura bootstrap -->
+
+    <!-- Conexion con Bootstrap-CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
     <!-- Animaciones CSS externa - https://animate.style/ -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
@@ -60,71 +61,73 @@
     </header>
 
     <!--Productos disponibles-->
-    <section class="prod-galery">
-        
-        <div class="product">
-            <div class="product__img">
-                <img src="../assets/productos/nudemcu-esp8266.jfif" alt="nudemcu">
+    <div class="conteiner m-auto py-2 prod-galery">
+    
+        <div class="row row-cols-ms-1 row-cols-md-3 row-cols-xl-4 g-4 px-3">
+
+            <div class="col">
+              <div class="card h-100">
+                <img src="../assets/productos/nudemcu-esp8266.jfif" class="card-img-top" alt="nudemcu">
+                <div class="card-body">
+                  <h5 class="card-title" style="color: black;">Nudemcu Wifi ESP8266</h5>
+                  <p class="card-text">Placa de desarrollo basada en el popular chip ESP8266. Con este sencillo modulo se puede realizar el prototipo de cualquier sistema para el loT. 10 GPIO, cada GPIO puede ser PWM, I2C, 1-Wire.</p>
+                </div>
+              </div>
             </div>
-            <div class="product__text">
-                <h4>Nudemcu Wifi ESP8266</h4>
-                <p>Placa de desarrollo basada en el popular chip ESP8266. Con este sencillo modulo se puede realizar el prototipo de cualquier sistema para el loT. 10 GPIO, cada GPIO puede ser PWM, I2C, 1-Wire.</p>
+
+            <div class="col">
+              <div class="card h-100">
+                <img src="../assets/productos/arduino-uno.jfif" class="card-img-top" alt="arduino uno">
+                <div class="card-body">
+                  <h5 class="card-title">Arduino Uno Ch340</h5>
+                  <p class="card-text">Placa de desarrollo basada en el microcontrolador Atmega328 + Ch340g. Digital I/O Pins 14. Analog Input Pins 6</p>
+                </div>
+              </div>
             </div>
-        </div>
-        
-        <div class="product">
-            <div class="product__img">
-                <img src="../assets/productos/arduino-uno.jfif" alt="arduino uno">
+
+            <div class="col">
+              <div class="card h-100">
+                <img src="../assets/productos/raspberrypi-4.jfif" class="card-img-top" alt="raspberry pi 4">
+                <div class="card-body">
+                  <h5 class="card-title">Raspberry Pi4 Model B 4gb</h5>
+                  <p class="card-text">Procesador 64-bit quad-core Cortex-A72. 4GB LPDDR4 RAM.2 puertos HDMI. 2 puertos USB 3.0</p>
+                </div>
+              </div>
             </div>
-            <div class="product__text">
-                <h4>Arduino Uno Ch340</h4>
-                <p>Placa de desarrollo basada en el microcontrolador Atmega328 + Ch340g. Digital I/O Pins 14. Analog Input Pins 6</p>
+
+            <div class="col">
+              <div class="card h-100">
+                <img src="../assets/productos/raspberry-display7.jfif" class="card-img-top" alt="display 7 raspberry">
+                <div class="card-body">
+                  <h5 class="card-title">Dispaly 7" tactil Raspberry</h5>
+                  <p class="card-text">Pantalla 7 pulgadas touchscreen original raspberry Element14. Unico con interfaz DSI.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card h-100">
+                  <img src="../assets/productos/modulo-relex2.jfif" class="card-img-top" alt="modulo rele x2">
+                  <div class="card-body">
+                    <h5 class="card-title">Modulo Relay de 2 canales</h5>
+                    <p class="card-text">Módulo de reles para conmutación de cargas de potencia. Los contactos de los relevadores están diseñados para conmutar cargas de hasta 10 A y 250VAC</p>
+                  </div>
+              </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="../assets/productos/sensor-nivel_ultrasonico.jfif" class="card-img-top" alt="sensor de nivel ultrasonico">
+                    <div class="card-body">
+                      <h5 class="card-title">Sensor ultrasonico para nivel</h5>
+                      <p class="card-text">Sensor ultrasonico para medir nivel de liquidos. 4-20mA</p>
+                    </div>
+                </div>
             </div>
 
         </div>
-        
-        <div class="product">
-            <div class="product__img">
-                <img src="../assets/productos/raspberrypi-4.jfif" alt="raspberry pi 4">
-            </div>
-            <div class="product__text">
-                <h4>Raspberry Pi4 Model B 4gb</h4>
-                <p>Procesador 64-bit quad-core Cortex-A72. 4GB LPDDR4 RAM.2 puertos HDMI. 2 puertos USB 3.0</p>
-            </div>
-        </div>
-        
-        <div class="product">
-            <div class="product__img">
-                <img src="../assets/productos/raspberry-display7.jfif" alt="display 7 raspberry">
-            </div>
-            <div class="product__text">
-                <h4>Dispaly 7" tactil Raspberry</h4>
-                <p>Pantalla 7 pulgadas touchscreen original raspberry Element14. Unico con interfaz DSI.</p>
-            </div>
-        </div>
+    </div>
 
-        <div class="product">
-            <div class="product__img">
-                <img src="../assets/productos/modulo-relex2.jfif" alt="modulo rele x2">
-            </div>
-            <div class="product__text">
-                <h4>Modulo Relay de 2 canales</h4>
-                <p>Módulo de reles para conmutación de cargas de potencia. Los contactos de los relevadores están diseñados para conmutar cargas de hasta 10 A y 250VAC</p>
-            </div>
-        </div>
-
-        <div class="product">
-            <div class="product__img">
-                <img src="../assets/productos/sensor-nivel_ultrasonico.jfif" alt="sensor de nivel ultrasonico">
-            </div>
-            <div class="product__text">
-                <h4>Sensor ultrasonico para nivel</h4>
-                <p>Sensor ultrasonico para medir nivel de liquidos. 4-20mA</p>
-            </div>
-        </div>
-
-        <!-- agregar todos los demás productos cuando este armado CSS, por si es necesario agregar Ids y Class -->
-    </section>
 
 
     <!-- Pie de pagina -->
@@ -152,6 +155,12 @@
             </a>
         </div>
     </footer>
+
+
+
+    <!-- JavaScript Bundle with Popper - Bootstraps -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

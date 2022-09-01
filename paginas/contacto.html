@@ -11,9 +11,9 @@
     <link rel="shortcut icon" href="../assets/iconos/logo Oxynus.svg">
 
     <!-- Limpiar estilos CSS -->
-    <link rel="stylesheet" href="../css/clean_style/normalize.css"> 
-    <link rel="stylesheet" href="../css/clean_style/reset.css">
-    <link rel="stylesheet" href="../css/clean_style/typography.css">
+    
+    <!-- Conexion con Bootstrap-CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
     <!-- Animaciones CSS externa - https://animate.style/ -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
@@ -86,6 +86,35 @@
 
         <!-- Formulario con datos del visitante -->
         <form class="contCentral__form">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+                Deseo que me contacten
+            </label>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Correo</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Telefono</label>
+            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="+54 9 3513xxxxxx">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit">Enviar</button>
+        </div>
+    </form>
+
+
+<!-- 
+        <form class="contCentral__form">
             
             <div class="contCentralForm__check">
                 <input type="checkbox" name="checkbox1" id="check-autor_visit">
@@ -101,7 +130,7 @@
             
             <textarea class="contCentralForm__msg" name="textarea1" id="mens_visit" cols="20" rows="14">Mensaje</textarea>
         </form>
-
+ -->
         <!-- Direccion y mapa -->
         <div class="contCentral__map">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15887.92367384777!2d-64.16792700859766!3d-31.415317021562213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a2a3c3ed5d07%3A0x23636317fc68e6aa!2s25%20de%20Mayo%201171%2C%20X5004FWK%20C%C3%B3rdoba!5e0!3m2!1ses-419!2sar!4v1659381237526!5m2!1ses-419!2sar" width=auto height=auto style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -135,6 +164,12 @@
             </a>
         </div>
     </footer>
+
+
+
+    <!-- JavaScript Bundle with Popper - Bootstraps -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
