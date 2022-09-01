@@ -78,18 +78,6 @@
     }
 }
 
-/* AGREGADO Y MODIFICACIONES DE ESTILOS A BOOTSTRAP */
-
-a { /* borra el subrayado de los link establecido en bootstrap */
-    text-decoration:none;
-}
-.h-10 {
-    height: 10%;
-}
-.h-80 {
-    height: 80%;
-}
-
 
 /* DISEÑO GENERAL PARA TODAS LAS PAGINAS DEL SITIO */
 
@@ -104,19 +92,20 @@ body
     background-image: linear-gradient(-45deg, rgb(25, 25, 25) 0%, rgb(50, 50, 50) 50%, rgb(25, 25, 25) 100%);
     background-size: auto;
     height: 100vh;
-/*     display: grid;
+    display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 8fr 1fr;
     grid-template-areas:     
     "header"    
     "central-info"    
     "footer";
-    row-gap: 15px; */
+    row-gap: 15px;
 }
 
 .logoFont{
     font-family: bradley-hand-itc, 'work sans', sans-serif;
 }
+
 
 /*          Background        */
 .backImg{
@@ -429,7 +418,6 @@ body
 .ind-central__logo h3{
     font-size: 22px;
     font-weight: 100;
-    color: whitesmoke;
     text-align: center;
     margin-top: 25px;
     animation: appear;
