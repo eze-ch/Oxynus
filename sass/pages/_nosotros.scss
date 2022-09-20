@@ -1,0 +1,115 @@
+
+/*                      PAGINA NOSOTROS                     */
+
+/*          Centro         */
+.nos-central{
+    width: 96%; height: 100%;
+    place-self: center;
+    position: relative;
+    margin: 25px;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 20px;
+    z-index: 2;
+}
+
+.nos-central__logo{
+    width: 300px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    div{
+        height: 220px;
+        width: 220px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border: 2px solid orangered;
+        border-radius: 110px;
+        -webkit-border-radius: 110px;
+        -moz-border-radius: 110px;
+        -ms-border-radius: 110px;
+        -o-border-radius: 110px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        animation: bounceInLeft;
+        -webkit-animation: bounceInLeft;
+        animation-duration: 1s;
+        animation-delay: 0;
+        animation-timing-function: linear;
+    
+        img{
+            height: 150px;
+            width: 150px;
+            padding: 0px;
+        }
+    }
+    
+    h3{
+        font-size: 18px;
+        font-weight: 100;
+        text-align: center;
+        animation: appear;
+        -webkit-animation: appear;
+        animation-duration: 2s;
+        animation-delay: 0;
+        animation-timing-function: ease-in;
+    }
+}
+
+
+.nos-central__history{
+    width: 60%;
+    height: auto;
+    border: 2px solid rgba(245, 245, 245, 0.658);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    animation: appear;
+    -webkit-animation: appear;
+    animation-duration: 3.5s;
+    animation-delay: 0;
+    animation-timing-function: ease-in;
+
+    h4{
+        color: white;
+        font-family: 'work sans', sans-serif;
+        font-size: 18px;
+        font-weight: 100;
+        text-align: start;
+    }
+    article{
+        font-size: 18px;
+        font-weight: 100;
+        text-align: left;
+    }
+}
+
+
+/*       Nosotros Responsive       */
+@media (max-width: $windowsSize_table){
+    .nos-central__history{
+        width: 85%;
+    }
+    .nos-central__history h4{
+        font-size: 16px;
+    }
+    .nos-central__history article{
+        font-size: 16px;
+    }
+}

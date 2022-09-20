@@ -1,0 +1,8 @@
+@mixin backgrImg ($width, $height) {
+    width: $width; 
+    height: $height;
+    position: fixed; bottom: 0px; left: 0px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left bottom;
+}

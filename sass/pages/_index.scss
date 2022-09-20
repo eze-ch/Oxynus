@@ -1,0 +1,82 @@
+/*                      PAGINA INDEX                     */
+
+/*          Centro         */
+.ind-central{
+    grid-area: central-info;
+    width: 96%; height: 100%;
+    place-self: center; /* place reemplaza a aling + justify */
+    position: relative;
+    margin: 25px;
+    z-index: 2;
+
+    &__logo{
+        width: fit-content;
+        height: fit-content;
+        position: absolute;
+        margin: auto;
+        top: 0; bottom: 0; right: 0; left: 0;
+        animation: appear;
+        -webkit-animation: appear;
+        animation-duration: 3s;
+        animation-delay: 0;
+        animation-timing-function: ease-in;
+        
+        div{
+            height: 320px;
+            width: 320px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 3px solid orangered;
+            border-radius: 160px;
+            -webkit-border-radius: 160px;
+            -moz-border-radius: 160px;
+            -ms-border-radius: 160px;
+            -o-border-radius: 160px;
+            animation-name: beatCircleLogo;
+            animation-duration: 4s;
+            animation-delay: 3s;
+            animation-iteration-count: infinite;
+            display: inline-block;
+        }
+        img{
+            height: 214px;
+            width: 214px;
+            display: inline-block;
+            position: absolute;
+            margin: auto;
+            top: 0; bottom: 60px; right: 0; left: 5px; 
+        }
+        h3{
+            font-size: 22px;
+            font-weight: 100;
+            text-align: center;
+            margin-top: 25px;
+            animation: appear;
+            -webkit-animation: appear;
+            animation-duration: 2                                                                                                                                                                        s;
+            animation-delay: 1s;
+            animation-timing-function: ease-in;
+        }
+    }
+    
+    &__popup{
+        display: none;
+    } /* se hara el popup cuando veamos la herramientas correspondientes para lograrlo */
+}
+
+
+
+/*       Index Responsive       */
+@media (max-width: $windowsSize_table){
+    .ind-central__logo{
+        transform: scale(0.8, 0.8);
+        transition: 0.5s;
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.5s;
+        -ms-transition: 0.5s;
+        -o-transition: 0.5s;
+        -webkit-transform: scale(0.8, 0.8);
+        -moz-transform: scale(0.8, 0.8);
+        -ms-transform: scale(0.8, 0.8);
+        -o-transform: scale(0.8, 0.8);
+    }
+}

@@ -156,25 +156,26 @@
     -o-transform: scale(1);
   }
 }
-/* DISEÑO GENERAL PARA TODAS LAS PAGINAS DEL SITIO */
 @font-face {
   font-family: bradley-hand-itc;
   src: url(../assets/fonts/bradley-hand-itc.ttf);
 }
+/* DISEÑO GENERAL PARA TODAS LAS PAGINAS DEL SITIO */
+.logoFont {
+  font-family: bradley-hand-itc, "work sans", sans-serif;
+}
+
 body {
+  height: 100vh;
   background-color: #242424;
   background-image: linear-gradient(-45deg, rgb(25, 25, 25) 0%, rgb(50, 50, 50) 50%, rgb(25, 25, 25) 100%);
   background-size: auto;
-  height: 100vh;
+  background-attachment: fixed;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 8fr 1fr;
   grid-template-areas: "header" "central-info" "footer";
   row-gap: 15px;
-}
-
-.logoFont {
-  font-family: bradley-hand-itc, "work sans", sans-serif;
 }
 
 /*          Background        */
@@ -187,23 +188,23 @@ body {
   z-index: 1;
 }
 .backImg__botGray {
+  background-image: url(../assets/background/background\ gris\ oscuro.png);
   width: 50%;
   height: 60%;
   position: fixed;
   bottom: 0px;
   left: 0px;
-  background-image: url(../assets/background/background\ gris\ oscuro.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: left bottom;
 }
 .backImg__botWhite {
+  background-image: url(../assets/background/background\ gris\ claro.png);
   width: 50%;
   height: 60%;
   position: fixed;
   bottom: 0px;
   left: 0px;
-  background-image: url(../assets/background/background\ gris\ claro.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: left bottom;
@@ -400,23 +401,23 @@ body {
   align-items: center;
   gap: 15px;
 }
-.footer__info .footerInfo__logo {
+.footer__info__logo {
   height: 100%;
   width: 60px;
 }
-.footer__info .footerInfo__logo a img {
+.footer__info__logo a img {
   height: 60px;
   width: auto;
   justify-self: center;
   align-self: center;
 }
-.footer__info .footerInfo__name h2 {
+.footer__info__name h2 {
   color: rgb(150, 150, 150);
   font-size: 30px;
   font-weight: 100;
   text-align: left;
 }
-.footer__info .footerInfo__name h3 {
+.footer__info__name h3 {
   color: rgb(150, 150, 150);
   font-family: "work sans", sans-serif;
   font-size: 15px;
@@ -434,7 +435,7 @@ body {
     height: 50px;
     margin-left: 8px;
   }
-  .footerInfo__logo {
+  .footer__info__logo {
     transform: scale(0.8, 0.8);
     transition: 1s;
     -webkit-transition: 1s;
@@ -474,8 +475,8 @@ body {
   left: 0;
   animation: appear;
   -webkit-animation: appear;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
   -webkit-animation-delay: 0;
           animation-delay: 0;
   -webkit-animation-timing-function: ease-in;
@@ -519,10 +520,10 @@ body {
   margin-top: 25px;
   animation: appear;
   -webkit-animation: appear;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
-  -webkit-animation-delay: 0;
-          animation-delay: 0;
+  -webkit-animation-duration: 2 s;
+          animation-duration: 2 s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
   -webkit-animation-timing-function: ease-in;
           animation-timing-function: ease-in;
 }
@@ -957,22 +958,21 @@ body {
   justify-content: center;
   align-content: center;
 }
-.contCentral__social img {
-  width: 60px;
-  height: auto;
-}
-.contCentral__social p {
-  display: inline;
-  font-size: 22px;
-  font-weight: 200;
-  text-align: left;
-}
-
-.contCentralSocial__block {
+.contCentral__social__block {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 10px;
+}
+.contCentral__social__block img {
+  width: 60px;
+  height: auto;
+}
+.contCentral__social__block p {
+  display: inline;
+  font-size: 22px;
+  font-weight: 200;
+  text-align: left;
 }
 
 /*          Formulario         */
@@ -990,25 +990,22 @@ body {
   justify-content: center;
   align-content: center;
 }
-
-.contCentralForm__data {
+.contCentral__form__data {
   gap: 5px;
 }
-.contCentralForm__data input {
+.contCentral__form__data input {
   display: block;
   margin: 20px;
   width: 100%;
 }
-
-.contCentralForm__send {
+.contCentral__form__send {
   width: 80px;
   height: 40px;
   background-color: rgba(47, 47, 252, 0.884);
   color: white;
   font-weight: 300;
 }
-
-.contCentralForm__msg {
+.contCentral__form__msg {
   width: 70%;
   height: 90%;
   grid-column: 2/3;
@@ -1060,7 +1057,7 @@ body {
     -ms-transform: scale(0.8, 0.8);
     -o-transform: scale(0.8, 0.8);
   }
-  .contCentralForm__data input {
+  .contCentral__form__data input {
     margin: 20px 0;
   }
 }/*# sourceMappingURL=main.css.map */
