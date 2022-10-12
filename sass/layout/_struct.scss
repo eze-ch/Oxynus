@@ -1,9 +1,21 @@
-
 /* DISEÑO GENERAL PARA TODAS LAS PAGINAS DEL SITIO */
 
-.logoFont{
-    font-family: bradley-hand-itc, 'work sans', sans-serif;
+html {
+    font-size: 9px;
 }
+
+@media (max-width: $windowsSize_table){
+    html {
+        font-size: 8px;
+    }
+}
+
+@media (max-width: $windowsSize_cel){
+    html {
+        font-size: 7px;
+    }
+}
+
 
 body
 {
@@ -14,13 +26,13 @@ body
     background-attachment: fixed;
 
     display: grid;
+    grid-template-areas:     
+    "header"
+    "central-info"
+    "footer";
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 8fr 1fr;
-    grid-template-areas:     
-    "header"    
-    "central-info"    
-    "footer";
-    row-gap: 15px;
+    row-gap: 1.5rem;
 }
 
 
@@ -33,16 +45,16 @@ body
 
     &__botGray{
         background-image: url(../assets/background/background\ gris\ oscuro.png);
-        @include backgrImg(50%,60%);
+        @include backgrImg(40%,50%);
     }
     
     &__botWhite{
         background-image: url(../assets/background/background\ gris\ claro.png);
-        @include backgrImg(50%,60%);
+        @include backgrImg(40%,50%);
     }
     
     &__topGray{
-        width: 40%; height: 50%;
+        width: 35%; height: 40%;
         position:fixed; top: 0px; right: 0px;
         transform: rotate(-180deg);
         -webkit-transform: rotate(-180deg);
@@ -57,16 +69,15 @@ body
 }
 
 
-
-
 /*          Header          */
 .header{
     grid-area: header;
-    margin-top: 10px;
+    margin-top: 1rem;
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
+    text-align: center;
     position:sticky; top: 0px; left: 0px;
     z-index: 10;
     transition: all 1s;
@@ -79,50 +90,49 @@ body
     animation-iteration-count: 1;
 
     &__menu{
-        width: 100%;
-        height: 100%;
+        height: fit-content;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        padding-left: 20px;
-        gap: 10px;
+        text-align: center;
+        padding-left: 2rem;
+        gap: 1rem;
 
         & li{
-            padding: 8px 15px;
-            height: 100%;
-        
+            padding: 0.8rem 1.5rem;
+            
             & a{
                 color: whitesmoke;
                 font-family: 'Segoe UI', Tahoma, 'work sans', sans-serif;
-                font-size: 22px;
+                font-size: 2.2rem;
                 text-align: center;
             }
         
             &:hover{
                 background-color: rgb(65, 65, 65);
-                border-radius: 25px;
-                -webkit-border-radius: 25px;
-                -moz-border-radius: 25px;
-                -ms-border-radius: 25px;
-                -o-border-radius: 25px;
+                border-radius: 2.5rem;
+                -webkit-border-radius: 2.5rem;
+                -moz-border-radius: 2.5rem;
+                -ms-border-radius: 2.5rem;
+                -o-border-radius: 2.5rem;
             }
         }
     }
 
     &__compName{
         color: orangered;
-        font-size: 40px;
+        font-size: 4rem;
         font-weight: 900;
         text-align: center;
-        margin-right: 25px;
-        padding: 1px 20px;
+        margin-right: 2.5rem;
+        padding: 0.1rem 2rem;
         background-color: rgba(0, 0, 0, 0.349);
-        border-radius: 25px;
-        -webkit-border-radius: 25px;
-        -moz-border-radius: 25px;
-        -ms-border-radius: 25px;
-        -o-border-radius: 25px;
+        border-radius: 2.5rem;
+        -webkit-border-radius: 2.5rem;
+        -moz-border-radius: 2.5rem;
+        -ms-border-radius: 2.5rem;
+        -o-border-radius: 2.5rem;
     }
 }
 
@@ -145,20 +155,13 @@ body
 /*       Header Responsive       */
 @media (max-width: $windowsSize_table){
     .header__menu li a{
-        font-size: 18px;
         transition: all 1s;
         -webkit-transition: all 1s;
         -moz-transition: all 1s;
         -ms-transition: all 1s;
         -o-transition: all 1s;
-}
+    }
     .header__compName{
-        font-size: 30px;
-        border-radius: 20px;
-        -webkit-border-radius: 20px;
-        -moz-border-radius: 20px;
-        -ms-border-radius: 20px;
-        -o-border-radius: 20px;
         transition: all 1s;
         -webkit-transition: all 1s;
         -moz-transition: all 1s;
@@ -186,7 +189,7 @@ body
         -moz-transition: all 2s;
         -ms-transition: all 2s;
         -o-transition: all 2s;
-}
+    }
     .header__menu li{
         display: block;
     }
@@ -204,7 +207,7 @@ body
 .footer{
     grid-area: footer;
     position: static; bottom: 0px; left: 0px;
-    padding: 2px 50px;
+    padding: 0.2rem 2rem;
     border: 2px solid black;
     background-color: rgba(0, 0, 0, 0.459);
     display: flex;
@@ -217,9 +220,9 @@ body
         width:fit-content;
         
         a img{
-            width: 60px;
-            height: 60px;
-            margin-left: 15px;
+            width: 6rem;
+            height: 6rem;
+            margin-left: 1.5rem;
         }
     }
     
@@ -230,14 +233,14 @@ body
         flex-direction: row;
         justify-content: left;
         align-items: center;
-        gap: 15px;
+        gap: 1.5rem;
         
         &__logo{
             height: 100%;
-            width: 60px;
+            width: 6rem;
             
             a img{
-                height: 60px;
+                height: 6rem;
                 width: auto;
                 justify-self: center;
                 align-self: center;
@@ -246,14 +249,13 @@ body
         &__name{
             h2{
                 color: rgb(150, 150, 150);
-                font-size: 30px;
+                font-size: 3rem;
                 font-weight: 100;
                 text-align: left;
             }
             h3{
                 color: rgb(150, 150, 150);
-                font-family: 'work sans', sans-serif;
-                font-size: 15px;
+                font-size: 1.8rem;
                 font-weight: 100;
                 text-align: left;
             }
@@ -262,27 +264,3 @@ body
 }
 
 
-
-/*       Footer Responsive       */
-@media (max-width: $windowsSize_table){
-    .footer{
-        padding: 2px 20px;
-    }
-    .footer__social a img{
-        width: 50px;
-        height: 50px;
-        margin-left: 8px;
-    }
-    .footer__info__logo{
-        transform: scale(0.8, 0.8);
-        transition: 1s;
-        -webkit-transition: 1s;
-        -moz-transition: 1s;
-        -ms-transition: 1s;
-        -o-transition: 1s;
-        -webkit-transform: scale(0.8, 0.8);
-        -moz-transform: scale(0.8, 0.8);
-        -ms-transform: scale(0.8, 0.8);
-        -o-transform: scale(0.8, 0.8);
-    }
-}

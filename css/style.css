@@ -316,24 +316,24 @@ body
     align-items: center;
     gap: 15px; 
 }
-.footerInfo__logo{
+.footer__info__logo{
     height: 100%;
     width: 60px;
 }
-.footerInfo__logo a img{
+.footer__info__logo a img{
     height: 60px;
     width: auto;
     justify-self: center;
     align-self: center;
 }
 
-.footerInfo__name h2{
+.footer__info__name h2{
     color: rgb(150, 150, 150);
     font-size: 30px;
     font-weight: 100;
     text-align: left;
 }
-.footerInfo__name h3{
+.footer__info__name h3{
     color: rgb(150, 150, 150);
     font-family: 'work sans', sans-serif;
     font-size: 15px;
@@ -351,7 +351,7 @@ body
         height: 50px;
         margin-left: 8px;
     }
-    .footerInfo__logo{
+    .footer__info__logo{
         transform: scale(0.8, 0.8);
         transition: 1s;
         -webkit-transition: 1s;

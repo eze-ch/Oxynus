@@ -6,7 +6,7 @@
     width: 96%; height: 100%;
     place-self: center; /* place reemplaza a aling + justify */
     position: relative;
-    margin: 25px;
+    margin: 2.5rem;
     z-index: 2;
 
     &__logo{
@@ -22,34 +22,34 @@
         animation-timing-function: ease-in;
         
         div{
-            height: 320px;
-            width: 320px;
+            height: 32rem;
+            width: 32rem;
             background-color: rgba(0, 0, 0, 0.5);
             border: 3px solid orangered;
-            border-radius: 160px;
-            -webkit-border-radius: 160px;
-            -moz-border-radius: 160px;
-            -ms-border-radius: 160px;
-            -o-border-radius: 160px;
+            border-radius: 16rem;
+            -webkit-border-radius: 16rem;
+            -moz-border-radius: 16rem;
+            -ms-border-radius: 16rem;
+            -o-border-radius: 16rem;
             animation-name: beatCircleLogo;
             animation-duration: 4s;
             animation-delay: 3s;
             animation-iteration-count: infinite;
             display: inline-block;
-        }
+}
         img{
-            height: 214px;
-            width: 214px;
+            height: 21.4rem;
+            width: 21.4rem;
             display: inline-block;
             position: absolute;
             margin: auto;
-            top: 0; bottom: 60px; right: 0; left: 5px; 
+            top: 0; bottom: 6rem; right: 0; left: 0.5rem; 
         }
         h3{
-            font-size: 22px;
+            font-size: 2.2rem;
             font-weight: 100;
             text-align: center;
-            margin-top: 25px;
+            margin-top: 2.5rem;
             animation: appear;
             -webkit-animation: appear;
             animation-duration: 2                                                                                                                                                                        s;
