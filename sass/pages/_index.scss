@@ -36,7 +36,7 @@
             animation-delay: 3s;
             animation-iteration-count: infinite;
             display: inline-block;
-}
+        }
         img{
             height: 21.4rem;
             width: 21.4rem;
@@ -58,10 +58,63 @@
         }
     }
     
-    &__popup{
-        display: none;
-    } /* se hara el popup cuando veamos la herramientas correspondientes para lograrlo */
+    &__modal{
+        position: fixed;
+        top: 22%;
+        left: 110%;
+        width: 30rem;
+        background-color: rgb(122, 122, 122);
+        color: rgb(29, 29, 29);
+        padding: 2rem;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        visibility: hidden;
+        opacity: 0;
+        transition: 1s;
+        box-shadow: 0 0 0 500vmax rgba(0, 0 ,0, .2);
+
+        h2{
+            color: rgb(29, 29, 29);
+            font-size: 2.5rem;
+            font-weight: 300;
+            text-align: center;
+            margin-top: 2.5rem;
+        }
+
+        p{
+            color: rgb(29, 29, 29);
+            font-size: 1.8rem;
+            font-weight: 100;
+            text-align: center;
+        }
+     
+        &.active{
+            transform: scale(1);
+            opacity: 1;
+            visibility: visible;
+            left: 65%;
+        }
+    }
 }
+
+
+.gral-button {
+    width: 15rem;
+    border: 0;
+    background-color: rgb(29, 29, 29);
+    color: white;
+    padding: .75rem 1rem;
+    border-radius: 500vmax;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
 
 
 
