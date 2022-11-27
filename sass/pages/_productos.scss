@@ -1,9 +1,24 @@
 
 /*                      PAGINA PRODUCTOS                     */
 
+/*          Centro de pagina productos        */
+.prod-central{
+    grid-area: central-info;
+    margin-top: 1rem;
+    z-index: 2;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    animation-name: appear;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+
 /*          Galeria         */
 .prod-galery{
-    grid-area: central-info;
+    //grid-area: central-info;
     width: 92%;
     height: auto;
     display: flex;
@@ -30,8 +45,9 @@
     display: flex;
     flex-direction: column;
     justify-content: start;
-    padding: 1.5rem;
+    padding: 2rem;
     border-radius: 2rem;
+    gap:1.6rem;
     -webkit-border-radius: 2rem;
     -moz-border-radius: 2rem;
     -ms-border-radius: 2rem;
@@ -51,28 +67,95 @@
         display: flex;
         flex-direction: column;
         justify-content: start;
+        gap:1rem;
     }
-    
-    img{
-        width: 27rem; height: 30rem;
-        object-fit: scale-down;
-        object-position: center center;
-    }
-    h4{
+
+    &__title{
         color: orangered;
         font-size: 2rem;
         font-weight: 500;
         line-height: 1.2em;
         text-align: center;
-        margin: 1.4rem 0px;
+        margin: 0rem 0px;
     }
-    p{
+
+    &__descrip{
         font-size: 1.8rem;
         font-weight: 100;
         line-height: 1.4em;
         text-align: center;
     }
+
+    &__cost{
+        font-size: 2rem;
+        font-weight: 100;
+        line-height: 1.4em;
+        text-align: center;
+        font-weight: 400;
+    }
+
+    &__add{
+        width: 100%;
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.4em;
+        text-align: center;
+        border: 0;
+        background-color: rgb(199, 199, 199);
+        color: rgb(30, 30, 30);
+        padding: .4rem;
+        text-transform: uppercase;
+        border-radius: 2rem;
+        cursor: pointer;
+        border: 2px solid rgb(199, 199, 199);
+        transition: background-color .2s, color .2s;
+        -webkit-transition: background-color .2s, color .2s;
+        -moz-transition: background-color .2s, color .2s;
+        -ms-transition: background-color .2s, color .2s;
+        -o-transition: background-color .2s, color .2s;
+        &:hover
+        {
+            background-color: rgba(0, 0, 0, 0.01);
+            color: whitesmoke;
+        }
+    }
+    
+    img{
+        width: 25rem; height: 30rem;
+        object-fit: scale-down;
+        object-position: center center;
+    }
+
 }
+
+.categorias{
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    padding-left: 2rem;
+    gap: 1rem;
+
+    & li{
+        padding: 0.8rem 1.5rem;
+        
+        & button{
+            color: whitesmoke;
+            font-family: 'Segoe UI', Tahoma, 'work sans', sans-serif;
+            font-size: 2.2rem;
+            text-align: center;
+            cursor: pointer;
+        }
+    }
+}
+
+.boton-menu.active {
+    color: orangered;
+}
+
+
 
 
 

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Nombre e icono en pestaña del buscador -->
+    <title>Oxynus - carrito</title>
+    <link rel="shortcut icon" href="../assets/iconos/logo Oxynus.svg">
+
+    <meta name="description" content="Carrito de productos a comprar">
+    <meta name="keywords" content="carrito, compras, pagos, trajeta, mercadopago, resumen">
+
+    <!-- Limpiar estilos CSS -->
+    <link rel="stylesheet" href="../css/clean_style/normalize.css"> 
+    <link rel="stylesheet" href="../css/clean_style/reset.css">
+    <link rel="stylesheet" href="../css/clean_style/typography.css">
+
+    <!-- Animaciones CSS externa - https://animate.style/ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    
+    <!-- Hoja de estilos CSS propia -->
+    <link rel="stylesheet" href="../sass/main.css">
+</head>
+
+<body>
+
+    <!-- Menu superior -->
+    <header class="header">
+        <!-- Nombre de la compañia -->
+        <a href="../index.html">
+            <h1 class="header__compName logoFont">OXYNUS</h1>
+        </a>
+
+        <!-- Menu de navegacion -->
+        <nav>
+            <input type="checkbox" id="menu">
+            <ul class="header__menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="./nosotros.html">Nosotros</a></li>
+                <li><a href="./proyectos.html">Proyectos</a></li>
+                <li><a href="./productos.html">Productos</a></li>
+                <li><a href="./contacto.html">Contacto</a></li>
+                <li><a href="./carrito.html">
+                        <i class="bi bi-cart-fill"></i> <span id="numerito" class="numerito">0</span>
+                    </a></li>
+            </ul>
+        </nav>
+
+        <!-- Menu desplegable -->
+        <div class="menuBurger">
+            <!-- <input type="checkbox" id="menu"> -->
+            <label for="menu" class="menuCheck">
+                <img src="../assets/iconos/icono menu naranja.png" alt="menu">
+            </label>
+        </div>
+    </header>
+
+
+
+    <section class="carr-central contenedor-carrito">
+        
+        <p id="carrito-vacio" class="carrito-vacio">Tu carrito está vacío. </p>
+        <p id="carrito-comprado" class="carrito-comprado disabled">Muchas gracias por tu compra. </p>
+
+        <div id="carrito-productos" class="carrito-productos disabled">
+            <!-- Todos los productos ahora son cargados desde JS -->
+        </div>
+
+        <div id="carrito-acciones" class="carrito-acciones disabled">
+            <div class="carrito-acciones-izquierda">
+                <button id="carrito-acciones-vaciar" class="carrito-acciones-vaciar">Vaciar carrito</button>
+            </div>
+            <div class="carrito-acciones-derecha">
+                <div class="carrito-acciones-total">
+                    <p>Total:</p>
+                    <p id="total">$3000</p>
+                </div>
+                <button id="carrito-acciones-comprar" class="carrito-acciones-comprar">Comprar</button>
+            </div>
+        </div>
+
+    </section>
+    
+    <!-- Pie de pagina -->
+    <footer class="footer">
+        <!-- Logo y nombre de compañia -->
+        <div class="footer__info">
+            <div class="footer__info__logo">
+                <a href="../index.html">
+                    <img src="../assets/iconos/logo Oxynus gris.svg" alt="Logo de la compañia">
+                </a>
+            </div>
+            <div class="footer__info__name">
+                <h2 class="logoFont">OXYNUS</h2>
+                <h3 class="esloganFont">RESOLVIENDO CON INGENIO</h3>
+            </div>
+        </div>
+
+        <!-- Redes Sociales -->
+        <div class="footer__social">
+            <a href="https://www.instagram.com/" target="_blank">
+                <img src="../assets/iconos/icono instagram alterado.png" alt="icono instagram">
+            </a>
+            <a href="https://www.facebook.com/" target="_blank">
+                <img src="../assets/iconos/icono facebook alterado.png" alt="icono instagram">
+            </a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/pages/carrito.js"></script>
+</body>
+</html>

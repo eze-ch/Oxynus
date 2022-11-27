@@ -36,6 +36,7 @@
             animation-delay: 3s;
             animation-iteration-count: infinite;
             display: inline-block;
+            cursor: pointer;
         }
         img{
             height: 21.4rem;
@@ -43,7 +44,8 @@
             display: inline-block;
             position: absolute;
             margin: auto;
-            top: 0; bottom: 6rem; right: 0; left: 0.5rem; 
+            top: 0; bottom: 6rem; right: 0; left: 0.5rem;
+            cursor: pointer;
         }
         h3{
             font-size: 2.2rem;
