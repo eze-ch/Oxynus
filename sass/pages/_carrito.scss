@@ -2,6 +2,10 @@
 
 .carr-central{
     grid-area: central-info;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
     justify-self: center;
     margin: 2.5rem;
     z-index: 2;
@@ -16,12 +20,6 @@
     font-size: 1.8rem;
 }
 
-.contenedor-carrito {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-}
 
 .carrito-vacio,
 .carrito-comprado {

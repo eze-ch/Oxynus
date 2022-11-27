@@ -10,7 +10,7 @@ const productos = [
         descripcion: "Placa de desarrollo basada en el popular chip ESP8266. Con este sencillo modulo se puede realizar el prototipo de cualquier sistema para el loT. 10 GPIO, cada GPIO puede ser PWM, I2C, 1-Wire.",
         categoria: {
             nombre: "Electronica",
-            id: "prod-electronic"
+            id_html: "prod-electronic"
         },
         precio: 1000
     },
@@ -21,7 +21,7 @@ const productos = [
         descripcion: "Placa de desarrollo basada en el microcontrolador Atmega328 + Ch340g. Digital I/O Pins 14. Analog Input Pins 6",
         categoria: {
             nombre: "Electronica",
-            id: "prod-electronic"
+            id_html: "prod-electronic"
         },
         precio: 5000
     },
@@ -32,7 +32,7 @@ const productos = [
         descripcion: "Procesador 64-bit quad-core Cortex-A72. 4GB LPDDR4 RAM.2 puertos HDMI. 2 puertos USB 3.0",
         categoria: {
             nombre: "Electronica",
-            id: "prod-electronic"
+            id_html: "prod-electronic"
         },
         precio: 65000
     },
@@ -43,7 +43,7 @@ const productos = [
         descripcion: "Pantalla 7 pulgadas touchscreen original raspberry Element14. Unico con interfaz DSI.",
         categoria: {
             nombre: "Electronica",
-            id: "prod-electronic"
+            id_html: "prod-electronic"
         },
         precio: 50000
     },
@@ -54,7 +54,7 @@ const productos = [
         descripcion: "Módulo de reles para conmutación de cargas de potencia. Los contactos de los relevadores están diseñados para conmutar cargas de hasta 10 A y 250VAC",
         categoria: {
             nombre: "Electronica",
-            id: "prod-electronic"
+            id_html: "prod-electronic"
         },
         precio: 50000
     },
@@ -67,7 +67,7 @@ const productos = [
         descripcion: "Placa de desarrollo basada en el popular chip ESP8266. Con este sencillo modulo se puede realizar el prototipo de cualquier sistema para el loT. 10 GPIO, cada GPIO puede ser PWM, I2C, 1-Wire.",
         categoria: {
             nombre: "Iluminacion",
-            id: "prod-ilumination"
+            id_html: "prod-ilumination"
         },
         precio: 2000
     },
@@ -78,7 +78,7 @@ const productos = [
         descripcion: "Placa de desarrollo basada en el popular chip ESP8266. Con este sencillo modulo se puede realizar el prototipo de cualquier sistema para el loT. 10 GPIO, cada GPIO puede ser PWM, I2C, 1-Wire.",
         categoria: {
             nombre: "Iluminacion",
-            id: "prod-ilumination"
+            id_html: "prod-ilumination"
         },
         precio: 3000
     },
@@ -91,7 +91,7 @@ const productos = [
         descripcion: "Placa de desarrollo basada en el popular chip ESP8266. Con este sencillo modulo se puede realizar el prototipo de cualquier sistema para el loT. 10 GPIO, cada GPIO puede ser PWM, I2C, 1-Wire.",
         categoria: {
             nombre: "Riego",
-            id: "prod-irrigation"
+            iid_html: "prod-irrigation"
         },
         precio: 2000
     },
@@ -102,7 +102,7 @@ const productos = [
         descripcion: "Placa de desarrollo basada en el popular chip ESP8266. Con este sencillo modulo se puede realizar el prototipo de cualquier sistema para el loT. 10 GPIO, cada GPIO puede ser PWM, I2C, 1-Wire.",
         categoria: {
             nombre: "Riego",
-            id: "prod-irrigation"
+            id_html: "prod-irrigation"
         },
         precio: 5000
     },
@@ -110,17 +110,51 @@ const productos = [
 ];
 
 // Vinculos con HTML
-const contenedorProductos = document.querySelector("#prod-galery");
-//const tituloPrincipal = document.querySelector("#titulo-principal");
-const numerito = document.querySelector("#numerito");
+const prodGalery = document.querySelector("#prod-galery");
+const shopNum = document.querySelector("#shopNum");
 
-const botonesCategorias = document.querySelectorAll(".boton-categoria");
-let botonesAgregar = document.querySelectorAll(".producto-agregar");
+const botonesCategorias = document.querySelectorAll(".but-category");
+let botonesAgregar = document.querySelectorAll(".product__add");
 
+
+cargarProductos(productos);
+
+botonesCategorias.forEach(boton => {
+    boton.addEventListener("click", (e) => {
+
+        botonesCategorias.forEach(boton => boton.classList.remove("active"));
+        e.currentTarget.classList.add("active");
+
+        if (e.currentTarget.id != "prod-all") {
+            const productoCategoria = productos.find(producto => producto.categoria.id_html === e.currentTarget.id);
+            const productosBoton = productos.filter(producto => producto.categoria.id_html === e.currentTarget.id);
+            cargarProductos(productosBoton);
+        } else {
+            cargarProductos(productos);
+        }
+
+    })
+});
+
+
+let productosEnCarrito;
+let productosEnCarritoLS = localStorage.getItem("productos-en-carrito");
+
+
+if (productosEnCarritoLS) {
+    productosEnCarrito = JSON.parse(productosEnCarritoLS);
+    actualizarshopNum();
+} else {
+    productosEnCarrito = [];
+}
+
+
+
+// FUNCIONES
 
 function cargarProductos(productosElegidos) {
 
-    contenedorProductos.innerHTML = "";
+    prodGalery.innerHTML = "";
 
     productosElegidos.forEach(producto => {
 
@@ -140,32 +174,10 @@ function cargarProductos(productosElegidos) {
             </div>
         `;
 
-        contenedorProductos.append(div);
+        prodGalery.append(div);
     })
-
     actualizarBotonesAgregar();
 }
-
-cargarProductos(productos);
-
-botonesCategorias.forEach(boton => {
-    boton.addEventListener("click", (e) => {
-
-        botonesCategorias.forEach(boton => boton.classList.remove("active"));
-        e.currentTarget.classList.add("active");
-
-        if (e.currentTarget.id != "prod-all") {
-            const productoCategoria = productos.find(producto => producto.categoria.id === e.currentTarget.id);
-            //tituloPrincipal.innerText = productoCategoria.categoria.nombre;
-            const productosBoton = productos.filter(producto => producto.categoria.id === e.currentTarget.id);
-            cargarProductos(productosBoton);
-        } else {
-            //tituloPrincipal.innerText = "Todos los productos";
-            cargarProductos(productos);
-        }
-
-    })
-});
 
 function actualizarBotonesAgregar() {
     botonesAgregar = document.querySelectorAll(".product__add");
@@ -175,35 +187,24 @@ function actualizarBotonesAgregar() {
     });
 }
 
-let productosEnCarrito;
-
-let productosEnCarritoLS = localStorage.getItem("productos-en-carrito");
-
-if (productosEnCarritoLS) {
-    productosEnCarrito = JSON.parse(productosEnCarritoLS);
-    actualizarNumerito();
-} else {
-    productosEnCarrito = [];
-}
-
 function agregarAlCarrito(e) {
-    const idBoton = e.currentTarget.id;
-    const productoAgregado = productos.find(producto => producto.id === idBoton);
+    const idCurrent = e.currentTarget.id;
+    const productoAgregado = productos.find(producto => producto.id === idCurrent);
 
-    if(productosEnCarrito.some(producto => producto.id === idBoton)) {
-        const index = productosEnCarrito.findIndex(producto => producto.id === idBoton);
+    if(productosEnCarrito.some(producto => producto.id === idCurrent)) {
+        const index = productosEnCarrito.findIndex(producto => producto.id === idCurrent);
         productosEnCarrito[index].cantidad++;
     } else {
         productoAgregado.cantidad = 1;
         productosEnCarrito.push(productoAgregado);
     }
 
-    actualizarNumerito();
-
+    actualizarshopNum();
     localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
 }
 
-function actualizarNumerito() {
-    let nuevoNumerito = productosEnCarrito.reduce((acc, producto) => acc + producto.cantidad, 0);
-    numerito.innerText = nuevoNumerito;
+
+function actualizarshopNum() {
+    let nuevoshopNum = productosEnCarrito.reduce((acc, producto) => acc + producto.cantidad, 0);
+    shopNum.innerText = nuevoshopNum;
 }
