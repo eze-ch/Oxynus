@@ -1,6 +1,6 @@
 // Array de objeto: Producto
 
-const productos = [
+const products = [
 
     // Electronica
     {
@@ -12,7 +12,8 @@ const productos = [
             nombre: "Electronica",
             id_html: "prod-electronic"
         },
-        precio: 1000
+        precio: 1000,
+        cantidad:0
     },
     {
         id: "prodElec-002",
@@ -23,7 +24,8 @@ const productos = [
             nombre: "Electronica",
             id_html: "prod-electronic"
         },
-        precio: 5000
+        precio: 5000,
+        cantidad:0
     },
     {
         id: "prodElec-003",
@@ -34,7 +36,8 @@ const productos = [
             nombre: "Electronica",
             id_html: "prod-electronic"
         },
-        precio: 65000
+        precio: 65000,
+        cantidad:0
     },
     {
         id: "prodElec-004",
@@ -45,7 +48,8 @@ const productos = [
             nombre: "Electronica",
             id_html: "prod-electronic"
         },
-        precio: 50000
+        precio: 50000,
+        cantidad:0
     },
     {
         id: "prodElec-005",
@@ -56,7 +60,8 @@ const productos = [
             nombre: "Electronica",
             id_html: "prod-electronic"
         },
-        precio: 50000
+        precio: 50000,
+        cantidad:0
     },
 
     // Iluminacion
@@ -69,7 +74,8 @@ const productos = [
             nombre: "Iluminacion",
             id_html: "prod-ilumination"
         },
-        precio: 2000
+        precio: 2000,
+        cantidad:0
     },
     {
         id: "prodIlum-002",
@@ -80,7 +86,8 @@ const productos = [
             nombre: "Iluminacion",
             id_html: "prod-ilumination"
         },
-        precio: 3000
+        precio: 3000,
+        cantidad:0
     },
 
     // Riego
@@ -93,7 +100,8 @@ const productos = [
             nombre: "Riego",
             iid_html: "prod-irrigation"
         },
-        precio: 2000
+        precio: 2000,
+        cantidad:0
     },
     {
         id: "prodRiego-002",
@@ -104,7 +112,8 @@ const productos = [
             nombre: "Riego",
             id_html: "prod-irrigation"
         },
-        precio: 5000
+        precio: 5000,
+        cantidad:0
     },
 
 ];
@@ -113,98 +122,98 @@ const productos = [
 const prodGalery = document.querySelector("#prod-galery");
 const shopNum = document.querySelector("#shopNum");
 
-const botonesCategorias = document.querySelectorAll(".but-category");
-let botonesAgregar = document.querySelectorAll(".product__add");
+const categoryButtons = document.querySelectorAll(".but-category");
+let addButtons = document.querySelectorAll(".product__add");
 
 
-cargarProductos(productos);
+loadProducts (products);
 
-botonesCategorias.forEach(boton => {
-    boton.addEventListener("click", (e) => {
+categoryButtons.forEach(button => {
+    button.addEventListener("click", (e) => {
 
-        botonesCategorias.forEach(boton => boton.classList.remove("active"));
+        categoryButtons.forEach(button => button.classList.remove("active"));
         e.currentTarget.classList.add("active");
 
         if (e.currentTarget.id != "prod-all") {
-            const productoCategoria = productos.find(producto => producto.categoria.id_html === e.currentTarget.id);
-            const productosBoton = productos.filter(producto => producto.categoria.id_html === e.currentTarget.id);
-            cargarProductos(productosBoton);
+            const productsFilter = products.filter(product => product.categoria.id_html === e.currentTarget.id);
+            loadProducts(productsFilter);
         } else {
-            cargarProductos(productos);
+            loadProducts(products);
         }
 
     })
 });
 
 
-let productosEnCarrito;
-let productosEnCarritoLS = localStorage.getItem("productos-en-carrito");
+let productsIn_shopCart;
+let productsIn_shopCartLS = localStorage.getItem("productos-en-carrito");
 
 
-if (productosEnCarritoLS) {
-    productosEnCarrito = JSON.parse(productosEnCarritoLS);
-    actualizarshopNum();
+if (productsIn_shopCartLS) {
+    productsIn_shopCart = JSON.parse(productsIn_shopCartLS);
+    updateShopNum();
 } else {
-    productosEnCarrito = [];
+    productsIn_shopCart = [];
 }
 
 
 
 // FUNCIONES
 
-function cargarProductos(productosElegidos) {
+function loadProducts(chosenProduct) {
 
     prodGalery.innerHTML = "";
 
-    productosElegidos.forEach(producto => {
+    chosenProduct.forEach(product => {
 
         const div = document.createElement("div");
         div.classList.add("product");
         div.innerHTML = `
             <div class="product__img">
-                <img src="${producto.imagen}" alt="${producto.titulo}">
+                <img src="${product.imagen}" alt="${product.titulo}">
             </div>
             <div class="product__text">
-                <h4 class="product__title">${producto.titulo}</h4>
-                <p class="product__descrip">${producto.descripcion}</p>
-                <p class="product__cost">$${producto.precio}</p>
+                <h4 class="product__title">${product.titulo}</h4>
+                <p class="product__descrip">${product.descripcion}</p>
+                <p class="product__cost">$${product.precio}</p>
             </div>
             <div class="product__button">
-                <button class="product__add" id="${producto.id}">Agregar</button>
+                <button class="product__add" id="${product.id}">Agregar</button>
             </div>
         `;
 
         prodGalery.append(div);
     })
-    actualizarBotonesAgregar();
+
+    updateAddButtons();
 }
 
-function actualizarBotonesAgregar() {
-    botonesAgregar = document.querySelectorAll(".product__add");
+function updateAddButtons() {
+    addButtons = document.querySelectorAll(".product__add");
 
-    botonesAgregar.forEach(boton => {
-        boton.addEventListener("click", agregarAlCarrito);
+    addButtons.forEach(button => {
+        button.addEventListener("click", addTo_shopCart);
     });
 }
 
-function agregarAlCarrito(e) {
+function addTo_shopCart(e) {
     const idCurrent = e.currentTarget.id;
-    const productoAgregado = productos.find(producto => producto.id === idCurrent);
+    const addedProduct = products.find(product => product.id === idCurrent);
 
-    if(productosEnCarrito.some(producto => producto.id === idCurrent)) {
-        const index = productosEnCarrito.findIndex(producto => producto.id === idCurrent);
-        productosEnCarrito[index].cantidad++;
+    if(productsIn_shopCart.some(product => product.id === idCurrent)) {
+        const index = productsIn_shopCart.findIndex(product => product.id === idCurrent);
+        productsIn_shopCart[index].cantidad++;
     } else {
-        productoAgregado.cantidad = 1;
-        productosEnCarrito.push(productoAgregado);
+        addedProduct.cantidad = 1;
+        productsIn_shopCart.push(addedProduct);
     }
 
-    actualizarshopNum();
-    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+    updateShopNum();
+    localStorage.setItem("productos-en-carrito", JSON.stringify(productsIn_shopCart));
 }
 
 
-function actualizarshopNum() {
-    let nuevoshopNum = productosEnCarrito.reduce((acc, producto) => acc + producto.cantidad, 0);
-    shopNum.innerText = nuevoshopNum;
+function updateShopNum() {
+    let newShopNum = productsIn_shopCart.reduce((acc, product) => acc + product.cantidad, 0);
+    shopNum.innerText = newShopNum;
 }
