@@ -44,7 +44,7 @@
                 <li><a href="./productos.html">Productos</a></li>
                 <li><a href="./contacto.html">Contacto</a></li>
                 <li><a href="./carrito.html">
-                        <i class="bi bi-cart-fill"></i> <span id="numerito" class="numerito">0</span>
+                        <i class="bi bi-cart-fill"></i> <span id="shopNum" class="shopNum">0</span>
                     </a></li>
             </ul>
         </nav>
@@ -62,23 +62,23 @@
 
     <section class="carr-central">
         
-        <p id="carrito-vacio" class="carrito-vacio">Tu carrito está vacío. </p>
-        <p id="carrito-comprado" class="carrito-comprado disabled">Muchas gracias por tu compra. </p>
+        <p id="shopCart_empty" class="shopCart_empty">Carrito vacío. </p>
+        <p id="shopCart_buyed" class="shopCart_buyed disabled">¡Gracias por su compra! </p>
 
-        <div id="carrito-productos" class="carrito-productos disabled">
+        <div id="shopcart__products" class="shopcart__products disabled">
             <!-- Todos los productos ahora son cargados desde JS -->
         </div>
 
-        <div id="carrito-acciones" class="carrito-acciones disabled">
-            <div class="carrito-acciones-izquierda">
-                <button id="carrito-acciones-vaciar" class="carrito-acciones-vaciar">Vaciar carrito</button>
+        <div id="shopcart__interaction" class="shopcart__interaction disabled">
+            <div class="shopcart__interaction__left">
+                <button id="shopcart__interaction__delete" class="shopcart__interaction-delete">Vaciar carrito</button>
             </div>
-            <div class="carrito-acciones-derecha">
-                <div class="carrito-acciones-total">
+            <div class="shopcart__interaction__rigth">
+                <div class="shopcart__interaction__total">
                     <p>Total:</p>
-                    <p id="total">$3000</p>
+                    <p id="total"></p> <!-- monto escrito en JS -->
                 </div>
-                <button id="carrito-acciones-comprar" class="carrito-acciones-comprar">Comprar</button>
+                <button id="shopcart__interaction__buy" class="shopcart__interaction__buy">Comprar</button>
             </div>
         </div>
 
@@ -112,5 +112,6 @@
 
     <!-- Scripts -->
     <script src="../js/pages/carrito.js"></script>
+    <script src="../js/gral/gral_struct.js"></script>
 </body>
 </html>

@@ -972,7 +972,6 @@ body {
   align-items: center;
   text-align: center;
   padding-left: 2rem;
-  gap: 1rem;
 }
 .prod-category li {
   padding: 0.8rem 1.5rem;
@@ -980,7 +979,7 @@ body {
 .prod-category li button {
   color: whitesmoke;
   font-family: "Segoe UI", Tahoma, "work sans", sans-serif;
-  font-size: 2.2rem;
+  font-size: 2rem;
   text-align: center;
   cursor: pointer;
 }
@@ -1201,27 +1200,28 @@ body {
   justify-self: center;
   margin: 2.5rem;
   z-index: 2;
-  -webkit-transition: all 1s;
-  -moz-transition: all 1s;
-  -ms-transition: all 1s;
-  -o-transition: all 1s;
+  justify-content: last baseline;
+  font-size: 1.8rem;
+  transition: all 1s;
   -webkit-animation-name: appear;
           animation-name: appear;
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
   -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
-  justify-content: last baseline;
-  font-size: 1.8rem;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
 }
 
-.carrito-vacio,
-.carrito-comprado {
+.shopcart__interaction__buy,
+.shopcart__interaction__delete {
   color: whitesmoke;
   font-size: 2rem;
 }
 
-.carrito-productos {
+.shopcart__products {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -1232,18 +1232,17 @@ body {
   gap: 1rem;
 }
 
-.carrito-producto {
+.shopcart__product {
   display: flex;
   justify-content: space-between;
   align-items: center;
   justify-items: left;
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 0.5rem;
+  padding: 0.8rem;
   padding-right: 1.5rem;
   border-radius: 1rem;
 }
-
-.carrito-producto-imagen {
+.shopcart__product__image {
   width: 8rem;
   height: 8rem;
   -o-object-fit: scale-down;
@@ -1257,27 +1256,24 @@ body {
   -ms-border-radius: 1rem;
   -o-border-radius: 1rem;
 }
-
-.carrito-producto-titulo {
+.shopcart__product__title {
   width: 25rem;
 }
-
-.carrito-producto small {
-  font-size: 1.6rem;
-}
-
-.carrito-producto-eliminar {
+.shopcart__product__delete {
   border: 0;
   background-color: transparent;
   color: orangered;
   cursor: pointer;
 }
+.shopcart__product small {
+  font-size: 1.6rem;
+}
 
-.carrito-acciones {
+.shopcart__interaction {
   display: flex;
   justify-content: space-between;
 }
-.carrito-acciones button {
+.shopcart__interaction button {
   font-size: 1.8rem;
   font-weight: 500;
   line-height: 1.4em;
@@ -1295,21 +1291,18 @@ body {
   -ms-transition: background-color 0.2s, color 0.2s;
   -o-transition: background-color 0.2s, color 0.2s;
 }
-.carrito-acciones button:hover {
+.shopcart__interaction button:hover {
   background-color: rgba(0, 0, 0, 0.01);
   color: whitesmoke;
 }
-
-.carrito-acciones-vaciar {
+.shopcart__interaction__delete {
   height: 100%;
 }
-
-.carrito-acciones-derecha {
+.shopcart__interaction__rigth {
   display: flex;
   gap: 1rem;
 }
-
-.carrito-acciones-total {
+.shopcart__interaction__total {
   display: flex;
   font-size: 1.8rem;
   font-weight: 500;

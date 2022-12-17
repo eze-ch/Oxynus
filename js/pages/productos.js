@@ -63,56 +63,58 @@ const products = [
         precio: 50000,
         cantidad:0
     },
-
-    // Iluminacion
     {
-        id: "prodIlum-001",
-        imagen: "../../assets/productos/nudemcu-esp8266.jfif",
-        titulo: "prod3",
-        descripcion: "Placa de desarrollo basada en el popular chip ESP8266. Con este sencillo modulo se puede realizar el prototipo de cualquier sistema para el loT. 10 GPIO, cada GPIO puede ser PWM, I2C, 1-Wire.",
+        id: "prodElec-006",
+        imagen: "../../assets/productos/sensor-nivel_ultrasonico.jfif",
+        titulo: "Sensor ultrasonico para nivel",
+        descripcion: "Sensor ultrasonico para medir nivel de liquidos. 4-20mA",
         categoria: {
-            nombre: "Iluminacion",
-            id_html: "prod-ilumination"
-        },
-        precio: 2000,
-        cantidad:0
-    },
-    {
-        id: "prodIlum-002",
-        imagen: "../../assets/productos/nudemcu-esp8266.jfif",
-        titulo: "prod4",
-        descripcion: "Placa de desarrollo basada en el popular chip ESP8266. Con este sencillo modulo se puede realizar el prototipo de cualquier sistema para el loT. 10 GPIO, cada GPIO puede ser PWM, I2C, 1-Wire.",
-        categoria: {
-            nombre: "Iluminacion",
-            id_html: "prod-ilumination"
+            nombre: "Electronica",
+            id_html: "prod-electronic"
         },
         precio: 3000,
         cantidad:0
     },
-
-    // Riego
     {
-        id: "prodRiego-001",
-        imagen: "../../assets/productos/nudemcu-esp8266.jfif",
-        titulo: "prod5",
-        descripcion: "Placa de desarrollo basada en el popular chip ESP8266. Con este sencillo modulo se puede realizar el prototipo de cualquier sistema para el loT. 10 GPIO, cada GPIO puede ser PWM, I2C, 1-Wire.",
+        id: "prodElec-007",
+        imagen: "../../assets/productos/tecla_Wifi.png",
+        titulo: "Tecla táctil Wifi",
+        descripcion: "Tecla de encendido para luz, tactil con Wifi. Color negra o blanca.",
         categoria: {
-            nombre: "Riego",
-            iid_html: "prod-irrigation"
+            nombre: "Electronica",
+            id_html: "prod-electronic"
+        },
+        precio: 7000,
+        cantidad:0
+    },
+
+    
+    // Iluminacion
+    {
+        id: "prodIlum-001",
+        imagen: "../../assets/productos/ledRGB.png",
+        titulo: "Tira led RGB",
+        descripcion: "Tira de 20mts de leds RGB programables y configurables por wifi",
+        categoria: {
+            nombre: "Iluminacion",
+            id_html: "prod-ilumination"
         },
         precio: 2000,
         cantidad:0
     },
+
+
+    // Riego
     {
-        id: "prodRiego-002",
-        imagen: "../../assets/productos/nudemcu-esp8266.jfif",
-        titulo: "prod6",
-        descripcion: "Placa de desarrollo basada en el popular chip ESP8266. Con este sencillo modulo se puede realizar el prototipo de cualquier sistema para el loT. 10 GPIO, cada GPIO puede ser PWM, I2C, 1-Wire.",
+        id: "prodRiego-001",
+        imagen: "../../assets/productos/electrovalvula.png",
+        titulo: "Electroválvula de riego",
+        descripcion: "Electrovalvula para agua de riego de marca Hunter. Con sistema de autolimpieza. 24Vca.",
         categoria: {
             nombre: "Riego",
             id_html: "prod-irrigation"
         },
-        precio: 5000,
+        precio: 8000,
         cantidad:0
     },
 
@@ -146,7 +148,7 @@ categoryButtons.forEach(button => {
 
 
 let productsIn_shopCart;
-let productsIn_shopCartLS = localStorage.getItem("productos-en-carrito");
+let productsIn_shopCartLS = localStorage.getItem("storage_shopcart");
 
 
 if (productsIn_shopCartLS) {
@@ -209,7 +211,7 @@ function addTo_shopCart(e) {
     }
 
     updateShopNum();
-    localStorage.setItem("productos-en-carrito", JSON.stringify(productsIn_shopCart));
+    localStorage.setItem("storage_shopcart", JSON.stringify(productsIn_shopCart));
 }
 
 
