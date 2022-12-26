@@ -102,9 +102,34 @@ function update_total() {
 }
 
 function delete_shopCart() {
-    productsIn_shopCart.length = 0;
-    localStorage.setItem("storage_shopcart", JSON.stringify(productsIn_shopCart));
-    load_shopCart();
+    Swal.fire({
+        title: '¿Estas seguro?',
+        text: "No podras revertir esta accion",
+        color: 'white',
+        background: '#000',
+        icon: 'warning',
+        iconColor: '#ff4500',
+        showCancelButton: true,
+        confirmButtonColor: '#393939',
+        cancelButtonColor: '#ff4500',
+        confirmButtonText: 'Si, borrar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+                title: 'Borrado!',
+                text: "Tu carrito ahora esta vacio",
+                color: 'white',
+                background: '#000',
+                iconColor: '#ff4500',
+                confirmButtonColor: '#393939',
+                confirmButtonText: 'Ok'
+                })
+            productsIn_shopCart.length = 0;
+            localStorage.setItem("storage_shopcart", JSON.stringify(productsIn_shopCart));
+            load_shopCart();
+        }
+    })
+
 }
 
 function buy_shopCart() {
