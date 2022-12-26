@@ -6,11 +6,15 @@ const shopCart_buyed = document.querySelector("#shopCart_buyed");
 
 const shopCart_products = document.querySelector("#shopcart__products");
 const shopCart_interaction = document.querySelector("#shopcart__interaction");
-let buttons_delete = document.querySelectorAll(".shopcart__products__delete");
+let buttons_delete = document.querySelectorAll(".shopcart__product__delete");
 const button_clear = document.querySelector("#shopcart__interaction__delete");
 const button_buy = document.querySelector("#shopcart__interaction__buy");
 const show_total = document.querySelector("#total");
 
+let newShopNum;
+
+
+// LOGICA
 
 load_shopCart();
 
@@ -68,26 +72,28 @@ function load_shopCart() {
 
     update_deleteButtons();
     update_total();
+
+    newShopNum = productsIn_shopCart.reduce((acc, product) => acc + product.cantidad, 0);
+    shopNum.innerText = newShopNum;
 }
 
 function update_deleteButtons() {
-    buttons_delete = document.querySelectorAll(".shopcart__products__delete");//SE PODRIA BORRAR
+    buttons_delete = document.querySelectorAll(".shopcart__product__delete");//SE PODRIA BORRAR
 
-    buttons_delete.forEach(boton => {
-        boton.addEventListener("click", delete_from_shopCart);
+    buttons_delete.forEach(button => {
+        button.addEventListener("click", delete_from_shopCart);
     });
 }
 
 
 function delete_from_shopCart(e) {
-    const idBoton = e.currentTarget.id;
-    const index = productsIn_shopCart.findIndex(product => product.id === idBoton);
+    const idButton = e.currentTarget.id;
+    const index = productsIn_shopCart.findIndex(product => product.id === idButton);
     
-    productsIn_shopCart.slice(index, 1);
-    load_shopCart();
-
+    productsIn_shopCart.splice(index, 1);
     localStorage.setItem("storage_shopcart", JSON.stringify(productsIn_shopCart));
-
+    
+    load_shopCart();
 }
 
 function update_total() {

@@ -1,4 +1,3 @@
-
 //UPDATE CARTSHOP NUMBER
 
 let productsIn_shopCart = localStorage.getItem("storage_shopcart");
